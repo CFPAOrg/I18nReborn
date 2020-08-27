@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "i18nreborn",
+  "version": "${version}",
+  "name": "I18nreborn",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/i18nreborn/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "org.cfpa.i18nreborn.fabric.I18nrebornClient"
+    ]
+  },
+  "mixins": [
+    "i18nreborn.mixins.json"
+  ],
+  "depends": {
+  }
+}
