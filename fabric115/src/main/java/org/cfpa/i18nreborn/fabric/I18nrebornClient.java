@@ -4,12 +4,15 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.SharedConstants;
+import net.minecraft.client.MinecraftClient;
 
 import java.io.*;
 import java.util.Date;
 
 @Environment(EnvType.CLIENT)
 public class I18nrebornClient implements ClientModInitializer {
+    public static String URL = "http://downloader1.meitangdehulu.com:22943/Minecraft-Mod-Language-Modpack-1-16.zip";
+
     @Override
     public void onInitializeClient() {
 
@@ -26,9 +29,10 @@ public class I18nrebornClient implements ClientModInitializer {
                     return;
                 }
             }
-            FileDownloadManager t = new FileDownloadManager("https://ae01.alicdn.com/kf/H0733a1a38d6d4406b0b8e304d0b1f83bU.jpg", "i18n.zip", path);
+            FileDownloadManager t = new FileDownloadManager(URL, "i18n.zip", path);
             t.setSuccessTask(() -> {
                 try {
+                    MinecraftClient.getInstance().reloadResources();
                     File writename = new File(path + "/update.txt");
                     if (!writename.exists())
                         writename.createNewFile();

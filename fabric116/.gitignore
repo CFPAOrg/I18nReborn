@@ -10,7 +10,7 @@ out/
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 
-# JIRA plugin
+# JIRA pl   ugin
 atlassian-ide-plugin.xml
 
 # Compiled class file

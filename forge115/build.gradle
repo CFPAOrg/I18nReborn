@@ -12,7 +12,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 
 group = "org.cfpa.i18nupdatemod"
-archivesBaseName = "i18nupdatemod"
+archivesBaseName = "i18nreborn"
 version = modVersion
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
 

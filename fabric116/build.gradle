@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         jcenter()
+        maven { url 'https://jitpack.io' }
         maven {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
@@ -8,7 +9,7 @@ buildscript {
         gradlePluginPortal()
     }
     dependencies {
-        classpath 'net.fabricmc:fabric-loom:0.5-SNAPSHOT'
+        classpath 'com.github.JihuayuBackUp:fabric-loom:dev~0.5-SNAPSHOT'
     }
 }
 

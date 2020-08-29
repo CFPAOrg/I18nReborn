@@ -21,15 +21,18 @@ import java.util.Locale;
 public class NI18nUpdateMod {
 
     public static final Logger LOGGER = LogManager.getLogger();
+    public static String URL = null;
 
     public NI18nUpdateMod() {
         if (FMLEnvironment.dist == Dist.CLIENT) {
             try{
                 if(MCPVersion.getMCVersion().toLowerCase().startsWith("1.15")){
                   Class.forName("org.cfpa.i18nupdatemod.mc115.I18nUpdateModPackFinder").getMethod("init").invoke(null);
+                    URL = "http://downloader1.meitangdehulu.com:22943/Minecraft-Mod-Language-Modpack-1-16.zip";
                 }
                 else if(MCPVersion.getMCVersion().toLowerCase().startsWith("1.16")){
                     Class.forName("org.cfpa.i18nupdatemod.mc116.I18nUpdateModPackFinder").getMethod("init").invoke(null);
+                    URL = "http://downloader1.meitangdehulu.com:22943/Minecraft-Mod-Language-Modpack-1-16.zip";
                 }
             }
             catch (Exception e){
@@ -56,9 +59,10 @@ public class NI18nUpdateMod {
                     return;
                 }
             }
-            FileDownloadManager t = new FileDownloadManager("https://ae01.alicdn.com/kf/H0733a1a38d6d4406b0b8e304d0b1f83bU.jpg", "i18n.zip", path);
+            FileDownloadManager t = new FileDownloadManager(URL, "i18n.zip", path);
             t.setSuccessTask(() -> {
                 try {
+                    Minecraft.getInstance().reloadResources();
                     File writename = new File(path + "/update.txt");
                     if (!writename.exists())
                         writename.createNewFile();
