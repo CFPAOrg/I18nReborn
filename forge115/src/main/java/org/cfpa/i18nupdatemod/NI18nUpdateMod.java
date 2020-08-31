@@ -46,7 +46,7 @@ public class NI18nUpdateMod {
     @SubscribeEvent
     public static void onClientStarting(FMLClientSetupEvent event) {
         Minecraft.getInstance().getLanguageManager().setCurrentLanguage(new Language("zh_cn", "CN", "简体中文", false));
-        String path = System.getProperty("user.home") + "/.i18n/"+MCPVersion.getMCVersion();
+        String path = System.getProperty("user.home") + "/.i18n/"+MCPVersion.getMCVersion().replaceAll("(.+\\..+)\\..+","$1");
         File filename = new File(path + "/update.txt");
         try {
             if (filename.exists()) {

@@ -16,7 +16,7 @@ public class I18nrebornClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
-        String path = System.getProperty("user.home") + "/.i18n/"+SharedConstants.getGameVersion().getName() ;
+        String path = System.getProperty("user.home") + "/.i18n/"+SharedConstants.getGameVersion().getName().replaceAll("(.+\\..+)\\..+","$1") ;
         File filename = new File(path + "/update.txt");
         try {
             if (filename.exists()) {

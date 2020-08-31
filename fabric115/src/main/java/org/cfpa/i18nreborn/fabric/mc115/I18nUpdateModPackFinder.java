@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class I18nUpdateModPackFinder implements ResourcePackProvider {
-    public static final I18nUpdateModPackFinder RESOUCE = new I18nUpdateModPackFinder("Resource Pack", new File(System.getProperty("user.home") + "/.i18n/"+ SharedConstants.getGameVersion().getName() +"/i18n.zip"));
+    public static final I18nUpdateModPackFinder RESOUCE = new I18nUpdateModPackFinder("Resource Pack", new File(System.getProperty("user.home") + "/.i18n/"+ SharedConstants.getGameVersion().getName().replaceAll("(.+\\..+)\\..+","$1") +"/i18n.zip"));
 
     private final File loaderDirectory;
     private I18nUpdateModPackFinder(String type, File loaderDirectory) {

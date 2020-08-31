@@ -10,7 +10,7 @@ import java.util.Map;
 
 public final class I18nUpdateModPackFinder implements IPackFinder {
 
-    public static final I18nUpdateModPackFinder RESOUCE = new I18nUpdateModPackFinder("Resource Pack", new File(System.getProperty("user.home") + "/.i18n/"+ MCPVersion.getMCVersion() +"/i18n.zip"));
+    public static final I18nUpdateModPackFinder RESOUCE = new I18nUpdateModPackFinder("Resource Pack", new File(System.getProperty("user.home") + "/.i18n/"+ MCPVersion.getMCVersion().replaceAll("(.+\\..+)\\..+","$1") +"/i18n.zip"));
 
     private final File loaderDirectory;
 
