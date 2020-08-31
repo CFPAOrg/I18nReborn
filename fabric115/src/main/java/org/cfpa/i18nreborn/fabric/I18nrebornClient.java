@@ -29,7 +29,7 @@ public class I18nrebornClient implements ClientModInitializer {
                     return;
                 }
             }
-            FileDownloadManager t = new FileDownloadManager(URL, "i18n.zip", path);
+            FileDownloadManager t = new FileDownloadManager(URL, "Minecraft-Mod-Language-Modpack.zip", path);
             t.setSuccessTask(() -> {
                 try {
                     MinecraftClient.getInstance().reloadResources();

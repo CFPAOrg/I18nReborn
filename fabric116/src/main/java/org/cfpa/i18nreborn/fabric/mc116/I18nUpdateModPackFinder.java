@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.function.Consumer;
 
 public class I18nUpdateModPackFinder implements ResourcePackProvider {
-    public static final I18nUpdateModPackFinder RESOUCE = new I18nUpdateModPackFinder("Resource Pack", new File(System.getProperty("user.home") + "/.i18n/"+ SharedConstants.getGameVersion().getName().replaceAll("(.+\\..+)\\..+","$1") +"/i18n.zip"));
+    public static final I18nUpdateModPackFinder RESOUCE = new I18nUpdateModPackFinder("Resource Pack", new File(System.getProperty("user.home") + "/.i18n/"+ SharedConstants.getGameVersion().getName().replaceAll("(.+\\..+)\\..+","$1") +"/Minecraft-Mod-Language-Modpack.zip"));
 
     private final File loaderDirectory;
     private I18nUpdateModPackFinder(String type, File loaderDirectory) {
@@ -23,7 +23,7 @@ public class I18nUpdateModPackFinder implements ResourcePackProvider {
 
     @Override
     public void register(Consumer<ResourcePackProfile> consumer, ResourcePackProfile.Factory factory) {
-        final String packName = "i18n";
+        final String packName = "Minecraft-Mod-Language-Modpack";
         final ResourcePackProfile packInfo = ResourcePackProfile.of(packName, true, () -> new ZipResourcePack(loaderDirectory), factory, ResourcePackProfile.InsertionPosition.TOP, ResourcePackSource.field_25347);
         if (packInfo != null) {
             consumer.accept(packInfo);

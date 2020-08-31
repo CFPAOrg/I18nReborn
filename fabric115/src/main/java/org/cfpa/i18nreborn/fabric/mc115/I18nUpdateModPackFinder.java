@@ -13,7 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class I18nUpdateModPackFinder implements ResourcePackProvider {
-    public static final I18nUpdateModPackFinder RESOUCE = new I18nUpdateModPackFinder("Resource Pack", new File(System.getProperty("user.home") + "/.i18n/"+ SharedConstants.getGameVersion().getName().replaceAll("(.+\\..+)\\..+","$1") +"/i18n.zip"));
+    public static final I18nUpdateModPackFinder RESOUCE = new I18nUpdateModPackFinder("Resource Pack", new File(System.getProperty("user.home") + "/.i18n/"+ SharedConstants.getGameVersion().getName().replaceAll("(.+\\..+)\\..+","$1") +"/Minecraft-Mod-Language-Modpack.zip"));
 
     private final File loaderDirectory;
     private I18nUpdateModPackFinder(String type, File loaderDirectory) {
@@ -26,7 +26,7 @@ public class I18nUpdateModPackFinder implements ResourcePackProvider {
 
     @Override
     public <T extends ResourcePackProfile> void register(Map<String, T> registry, ResourcePackProfile.Factory<T> factory) {
-        final String packName = "i18n";
+        final String packName = "Minecraft-Mod-Language-Modpack";
         final T packInfo = ResourcePackProfile.of(packName, true, () -> new ZipResourcePack(loaderDirectory), factory, ResourcePackProfile.InsertionPosition.TOP);
         if (packInfo != null) {
             registry.put(packName,packInfo);

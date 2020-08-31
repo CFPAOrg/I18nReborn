@@ -59,7 +59,7 @@ public class NI18nUpdateMod {
                     return;
                 }
             }
-            FileDownloadManager t = new FileDownloadManager(URL, "i18n.zip", path);
+            FileDownloadManager t = new FileDownloadManager(URL, "Minecraft-Mod-Language-Modpack.zip", path);
             t.setSuccessTask(() -> {
                 try {
                     Minecraft.getInstance().reloadResources();
